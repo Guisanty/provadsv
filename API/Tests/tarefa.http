@@ -10,6 +10,25 @@ Content-Type: application/json
 {
   "Titulo": "Compras no Supermercado",
   "Descricao": "1. Fazer lista de compras: pão, leite, ovos, frutas, vegetais",
-  "CategoriaId": 4
+  "CategoriaId": 1,
+  "Status": "Não iniciada"
 }
+
+### Alterar produto pelo ID
+PATCH  {{base_url}}/alterar/2
+Content-Type: application/json
+
+{
+  "Titulo": "Compras no Supermercado",
+  "Descricao": "1. Fazer lista de compras: pão, leite, ovos, frutas, vegetais",
+  "CategoriaId": 1,
+  "Status": ""
+}
+
+### Listar Tarefas ###
+GET {{base_url}}/naoconcluidas
+
+### Listar Tarefas ###
+GET {{base_url}}/concluidas
+
 

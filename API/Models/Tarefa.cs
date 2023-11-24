@@ -1,4 +1,6 @@
-﻿namespace API.Models;
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace API.Models;
 
 public class Tarefa
 {
@@ -8,4 +10,5 @@ public class Tarefa
     public DateTime CriadoEm { get; set; } = DateTime.Now;
     public Categoria? Categoria { get; set; }
     public int CategoriaId { get; set; }
+    public string? Status { get; set; }
 }

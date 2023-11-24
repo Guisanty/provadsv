@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace API.Migrations
 {
     [DbContext(typeof(AppDataContext))]
-    [Migration("20231124122038_Iniciando")]
-    partial class Iniciando
+    [Migration("20231124133515_Banco")]
+    partial class Banco
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -39,19 +39,19 @@ namespace API.Migrations
                         new
                         {
                             CategoriaId = 1,
-                            CriadoEm = new DateTime(2023, 11, 25, 9, 20, 38, 31, DateTimeKind.Local).AddTicks(1972),
+                            CriadoEm = new DateTime(2023, 11, 25, 10, 35, 15, 334, DateTimeKind.Local).AddTicks(2784),
                             Nome = "Trabalho"
                         },
                         new
                         {
                             CategoriaId = 2,
-                            CriadoEm = new DateTime(2023, 11, 26, 9, 20, 38, 31, DateTimeKind.Local).AddTicks(1976),
+                            CriadoEm = new DateTime(2023, 11, 26, 10, 35, 15, 334, DateTimeKind.Local).AddTicks(2788),
                             Nome = "Estudos"
                         },
                         new
                         {
                             CategoriaId = 3,
-                            CriadoEm = new DateTime(2023, 11, 27, 9, 20, 38, 31, DateTimeKind.Local).AddTicks(1977),
+                            CriadoEm = new DateTime(2023, 11, 27, 10, 35, 15, 334, DateTimeKind.Local).AddTicks(2790),
                             Nome = "Lazer"
                         });
                 });
@@ -71,6 +71,9 @@ namespace API.Migrations
                     b.Property<string>("Descricao")
                         .HasColumnType("TEXT");
 
+                    b.Property<string>("Status")
+                        .HasColumnType("TEXT");
+
                     b.Property<string>("Titulo")
                         .HasColumnType("TEXT");
 
@@ -85,24 +88,27 @@ namespace API.Migrations
                         {
                             TarefaId = 1,
                             CategoriaId = 1,
-                            CriadoEm = new DateTime(2023, 12, 1, 9, 20, 38, 31, DateTimeKind.Local).AddTicks(2044),
+                            CriadoEm = new DateTime(2023, 12, 1, 10, 35, 15, 334, DateTimeKind.Local).AddTicks(2857),
                             Descricao = "Terminar relatório para reunião",
+                            Status = "Não iniciada",
                             Titulo = "Concluir relatório"
                         },
                         new
                         {
                             TarefaId = 2,
                             CategoriaId = 2,
-                            CriadoEm = new DateTime(2023, 11, 27, 9, 20, 38, 31, DateTimeKind.Local).AddTicks(2045),
+                            CriadoEm = new DateTime(2023, 11, 27, 10, 35, 15, 334, DateTimeKind.Local).AddTicks(2859),
                             Descricao = "Preparar-se para a aula de Angular",
+                            Status = "Não iniciada",
                             Titulo = "Estudar Angular"
                         },
                         new
                         {
                             TarefaId = 3,
                             CategoriaId = 3,
-                            CriadoEm = new DateTime(2023, 12, 8, 9, 20, 38, 31, DateTimeKind.Local).AddTicks(2046),
+                            CriadoEm = new DateTime(2023, 12, 8, 10, 35, 15, 334, DateTimeKind.Local).AddTicks(2861),
                             Descricao = "Dar um passeio relaxante no parque",
+                            Status = "Não iniciada",
                             Titulo = "Passeio no parque"
                         });
                 });

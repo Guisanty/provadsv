@@ -20,9 +20,9 @@ public class AppDataContext : DbContext
         );
 
         modelBuilder.Entity<Tarefa>().HasData(
-            new Tarefa { TarefaId = 1, Titulo = "Concluir relatório", Descricao = "Terminar relatório para reunião", CriadoEm = DateTime.Now.AddDays(7), CategoriaId = 1 },
-            new Tarefa { TarefaId = 2, Titulo = "Estudar Angular", Descricao = "Preparar-se para a aula de Angular", CriadoEm = DateTime.Now.AddDays(3), CategoriaId = 2 },
-            new Tarefa { TarefaId = 3, Titulo = "Passeio no parque", Descricao = "Dar um passeio relaxante no parque", CriadoEm = DateTime.Now.AddDays(14), CategoriaId = 3 }
+            new Tarefa { TarefaId = 1, Titulo = "Concluir relatório", Descricao = "Terminar relatório para reunião", CriadoEm = DateTime.Now.AddDays(7), CategoriaId = 1, Status = "Não iniciada" },
+            new Tarefa { TarefaId = 2, Titulo = "Estudar Angular", Descricao = "Preparar-se para a aula de Angular", CriadoEm = DateTime.Now.AddDays(3), CategoriaId = 2, Status = "Não iniciada" },
+            new Tarefa { TarefaId = 3, Titulo = "Passeio no parque", Descricao = "Dar um passeio relaxante no parque", CriadoEm = DateTime.Now.AddDays(14), CategoriaId = 3, Status = "Não iniciada" }
         );
     }
 }
