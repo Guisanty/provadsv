@@ -1,38 +1,37 @@
 import { HttpClient } from "@angular/common/http";
 import { Component } from "@angular/core";
 import { MatSnackBar } from "@angular/material/snack-bar";
-import { Produto } from "src/app/models/produto.models";
+import { Tarefa } from "src/app/models/tarefa.models";
 
 @Component({
-  selector: "app-listar-produto",
-  templateUrl: "./listar-produto.component.html",
-  styleUrls: ["./listar-produto.component.css"],
+  selector: "app-listar-tarefa",
+  templateUrl: "./listar-tarefa.component.html",
+  styleUrls: ["./listar-tarefa.component.css"],
 })
-export class ListarProdutoComponent {
+export class ListarTarefaComponent {
   colunasTabela: string[] = [
     "id",
-    "nome",
+    "titulo",
     "descricao",
-    "quantidade",
-    "preco",
-    "categoria",
     "criadoEm",
+    "categoria",
+    "status",
     "deletar",
     "alterar",
   ];
 
-  produtos: Produto[] = [];
+  tarefas: Tarefa[] = [];
 
   constructor(private client: HttpClient, private snackBar: MatSnackBar) {}
 
   //Método que é executado ao abrir um componente
   ngOnInit(): void {
     this.client
-      .get<Produto[]>("https://localhost:7083/api/produto/listar")
+      .get<Tarefa[]>("https://localhost:7083/api/tarefa/listar")
       .subscribe({
         //A requição funcionou
-        next: (produtos) => {
-          this.produtos = produtos;
+        next: (tarefas) => {
+          this.tarefas = tarefas;
         },
         //A requição não funcionou
         error: (erro) => {
@@ -41,16 +40,16 @@ export class ListarProdutoComponent {
       });
   }
 
-  deletar(produtoId: number) {
+  deletar(tarefaId: number) {
     this.client
-      .delete<Produto[]>(
-        `https://localhost:7083/api/produto/deletar/${produtoId}`
+      .delete<Tarefa[]>(
+        `https://localhost:7083/api/tarefa/deletar/${tarefaId}`
       )
       .subscribe({
         //Requisição com sucesso
-        next: (produtos) => {
-          this.produtos = produtos;
-          this.snackBar.open("Produto deletado com sucesso!!", "E-commerce", {
+        next: (tarefas) => {
+          this.tarefas = tarefas;
+          this.snackBar.open("Tarefa deletada com sucesso!!", "E-commerce", {
             duration: 1500,
             horizontalPosition: "right",
             verticalPosition: "top",

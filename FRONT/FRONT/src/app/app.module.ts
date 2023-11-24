@@ -15,19 +15,21 @@ import { MatSnackBarModule } from "@angular/material/snack-bar";
 
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
-import { ListarProdutoComponent } from "./pages/produto/listar-produto/listar-produto.component";
-import { CadastrarProdutoComponent } from "./pages/produto/cadastrar-produto/cadastrar-produto.component";
 import { FormsModule } from "@angular/forms";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
-import { AlterarProdutoComponent } from './pages/produto/alterar-produto/alterar-produto.component';
+
+import { ListarTarefaComponent } from "../app/pages/listar-tarefa/listar-tarefa.component";
+import { CadastrarTarefaComponent } from "../app/pages/cadastrar-tarefa/cadastrar-tarefa.component";
+import { AlterarTarefaComponent } from "../app/pages/alterar-tarefa/alterar-tarefa.component";
+
 
 @NgModule({
   //Componentes da aplicação
   declarations: [
     AppComponent,
-    ListarProdutoComponent,
-    CadastrarProdutoComponent,
-    AlterarProdutoComponent,
+    ListarTarefaComponent,
+    CadastrarTarefaComponent,
+    AlterarTarefaComponent,
   ],
   //Bibliotecas externas da aplicação
   imports: [
